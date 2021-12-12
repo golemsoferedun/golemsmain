@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Row, Col, Drawer } from "antd";
 import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../common/SvgIcon";
-import { Button } from "../../common/Button";
+// import { Button } from "../../common/Button";
 import {
   HeaderSection,
   LogoContainer,
@@ -14,60 +14,57 @@ import {
   Outline,
   Span,
 } from "./styles";
-import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
-import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
-import SolanaButton from "../SolanaButton";
+// import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
+// import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
+// import SolanaButton from "../SolanaButton";
 
 
 import { lazy } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import * as anchor from "@project-serum/anchor";
-import { Component} from 'react';
-//UI Imports
+// import { Component} from 'react';
+// //UI Imports
 
 
-import { clusterApiUrl } from "@solana/web3.js";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import {
-  getPhantomWallet,
-  getSlopeWallet,
-  getSolflareWallet,
-  getSolletWallet,
-  getSolletExtensionWallet,
-} from "@solana/wallet-adapter-wallets";
+// import { clusterApiUrl } from "@solana/web3.js";
+// import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+// import {
+//   getPhantomWallet,
+//   getSlopeWallet,
+//   getSolflareWallet,
+//   getSolletWallet,
+//   getSolletExtensionWallet,
+// } from "@solana/wallet-adapter-wallets";
 
 
 import { createTheme, ThemeProvider } from "@material-ui/core";
 
 
-const Contact = lazy(() => import("../../components/ContactForm"));
-const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));
-const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
-const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 
-const treasury = new anchor.web3.PublicKey(
-  process.env.REACT_APP_TREASURY_ADDRESS!
-);
 
-const config = new anchor.web3.PublicKey(
-  process.env.REACT_APP_CANDY_MACHINE_CONFIG!
-);
+// const treasury = new anchor.web3.PublicKey(
+//   process.env.REACT_APP_TREASURY_ADDRESS!
+// );
 
-const candyMachineId = new anchor.web3.PublicKey(
-  process.env.REACT_APP_CANDY_MACHINE_ID!
-);
+// const config = new anchor.web3.PublicKey(
+//   process.env.REACT_APP_CANDY_MACHINE_CONFIG!
+// );
 
-const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
+// const candyMachineId = new anchor.web3.PublicKey(
+//   process.env.REACT_APP_CANDY_MACHINE_ID!
+// );
 
-const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
-const connection = new anchor.web3.Connection(rpcHost);
+// const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork;
 
-const startDateSeed = parseInt(process.env.REACT_APP_CANDY_START_DATE!, 10);
+// const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!;
+// const connection = new anchor.web3.Connection(rpcHost);
 
-const txTimeout = 30000; // milliseconds (confirm this works for your project)
+// const startDateSeed = parseInt(process.env.REACT_APP_CANDY_START_DATE!, 10);
+
+// const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
 const theme = createTheme({
     palette: {
@@ -107,18 +104,18 @@ export interface HomeProps {
 
 const Header = ({ t }: any) => {
 
-  const endpoint = useMemo(() => clusterApiUrl(network), []);
+  // const endpoint = useMemo(() => clusterApiUrl(network), []);
 
-  const wallets = useMemo(
-    () => [
-        getPhantomWallet(),
-        getSlopeWallet(),
-        getSolflareWallet(),
-        getSolletWallet({ network }),
-        getSolletExtensionWallet({ network })
-    ],
-    []
-  );
+  // const wallets = useMemo(
+  //   () => [
+  //       getPhantomWallet(),
+  //       getSlopeWallet(),
+  //       getSolflareWallet(),
+  //       getSolletWallet({ network }),
+  //       getSolletExtensionWallet({ network })
+  //   ],
+  //   []
+  // );
 
   const [visible, setVisibility] = useState(false);
 
@@ -167,9 +164,9 @@ const Header = ({ t }: any) => {
                   </WalletDialogProvider>
                 </WalletProvider>
               </ConnectionProvider> */}
-              
+              <a target="_blank" href="https://presalegolems.online/">
               <button>Mint a golem</button>
-             
+              </a>
               
             </ThemeProvider>
             {/* <button>Mint (soon)</button> */}
