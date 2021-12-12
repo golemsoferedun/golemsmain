@@ -119,7 +119,6 @@ const Header = ({ t }: any) => {
     ],
     []
   );
-  let url="https://presalegolems.online/";
 
   const [visible, setVisibility] = useState(false);
 
@@ -168,9 +167,9 @@ const Header = ({ t }: any) => {
                   </WalletDialogProvider>
                 </WalletProvider>
               </ConnectionProvider> */}
-              <a target="_blank" href="https://presalegolems.online/">
+              
               <button>Mint a golem</button>
-              </a>
+             
               
             </ThemeProvider>
             {/* <button>Mint (soon)</button> */}
